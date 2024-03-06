@@ -14,6 +14,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { SlLock } from "react-icons/sl";
 import { RiUserAddLine } from "react-icons/ri";
 import { login, resetLogin } from "../redux/slices/authSlice";
+import axios from "axios";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -34,17 +35,27 @@ const Login = () => {
   // Now you can use userData and setUserData here
   // For example:
   const handleUpdateUserData = (email, password) => {
-    if (email && password) {setUserDataLogin({
-      email: email,
-      password: password,
-    });}
+    if (email && password) {
+      setUserDataLogin({
+        email: email,
+        password: password,
+      });
+    }
+  };
+
+
+  const saveCredentialsToLocalStorage = (username, password) => {
+    localStorage.setItem("username", username);
+    localStorage.setItem("password", password);
   };
 
 
 
+  // stock below
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    saveCredentialsToLocalStorage(email, password)
     handleUpdateUserData(email, password)
     if (!email || !password) return;
     try {
@@ -53,6 +64,7 @@ const Login = () => {
       // console.log(err?.message);
     }
   };
+
   useEffect(() => {
     console.log(userDataLogin)
   }, [userDataLogin])
