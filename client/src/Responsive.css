@@ -1,0 +1,203 @@
+@media only screen and (max-width: 480px) {
+  main {
+    padding: 0 !important;
+  }
+
+  main .container {
+    padding: 5px;
+  }
+  main .container .row > div {
+    padding: 0 5px;
+  }
+
+  main .container .filter {
+    margin-bottom: 10px;
+  }
+
+  main .container .topic-item .topic-item-content {
+    padding: 15px;
+  }
+
+  main .container .topic-item .topic-vote,
+  main .container .profile .profile-info .tab-ui .topic-vote {
+    position: unset;
+    top: unset;
+    left: unset;
+    flex-direction: row !important;
+    justify-content: center;
+    margin: 10px 0 !important;
+  }
+
+  main .container .topic-item .topic-vote button,
+  main .container .profile .profile-info .tab-ui .topic-vote button {
+    margin: 0 5px !important;
+    width: 30px;
+    height: 30px;
+    font-size: 30px;
+  }
+
+  main .container .right-sidebar a.new-topic {
+    margin-top: 3rem;
+  }
+
+  main .container .left-sidebar .nav,
+  main .container .right-sidebar .nav {
+    margin-bottom: 4rem;
+  }
+
+  main .container .thread .topic-item-content .tags-container {
+    flex-direction: column;
+  }
+
+  main .container .thread .topic-item-content > div {
+    margin-bottom: 0 !important;
+  }
+
+  main .container .thread .add-comment {
+    padding: 10px;
+    padding-top: 15px !important;
+  }
+
+  main .container .thread .comments-container {
+    padding: 5px !important;
+    overflow: hidden;
+  }
+
+  main
+    .container
+    .thread
+    .comments-container
+    .comment
+    .comment-info
+    .comment-meta {
+    flex-direction: column !important;
+    align-items: unset !important;
+  }
+
+  main .container .topic-item .topic-item-content .topic-title {
+    margin: 0 !important;
+  }
+
+  header > .navbar > .container {
+    padding: 0;
+    max-width: 100%;
+    margin: 0;
+  }
+
+  .navbar-collapse {
+    margin: 1rem 0 0 0 !important;
+  }
+
+  header .navbar-collapse > div {
+    margin-left: unset;
+    margin-bottom: 1rem;
+  }
+
+  header .navbar-collapse > div > a {
+    margin-right: unset;
+    margin-bottom: 1rem;
+  }
+
+  .profile {
+    padding: 10px !important;
+  }
+
+  main .container .profile .profile-header .user-profile-meta {
+    flex-direction: column;
+  }
+
+  main .container .profile .profile-header .user-profile-meta {
+    padding: 2rem 0;
+    text-align: center;
+  }
+
+  main
+    .container
+    .profile
+    .profile-header
+    .profile-header-section
+    .social-links {
+    position: relative;
+    text-align: center;
+    top: -15px;
+    left: 0;
+    right: 0;
+  }
+
+  ul.profile-menu {
+    flex-direction: column;
+  }
+
+  main
+    .container
+    .profile
+    .profile-header
+    .profile-header-section
+    .profile-menu
+    .nav-link {
+    margin: auto !important;
+  }
+
+  main .container .profile .profile-info .tab-ui .comment-type {
+    display: none;
+  }
+
+  main .container .profile .profile-info .tab-ui .comment-brief {
+    padding: 5px !important;
+  }
+
+  main
+    .container
+    .profile
+    .profile-info
+    .tab-ui
+    .comment-brief
+    .comment-meta::after {
+    position: unset !important;
+  }
+
+  main .container .profile .profile-info .tab-ui .comment-brief .comment-meta {
+    overflow-x: auto;
+  }
+
+  main .container .profile .profile-info .tab-ui .comment-brief .comment-date {
+    white-space: break-spaces;
+  }
+
+  .edit-profile form {
+    flex-direction: column;
+  }
+
+  .auth-form .card {
+    max-width: 100%;
+    margin: 0;
+    padding: 5px;
+  }
+
+  .auth-form .bg-wrapper {
+    padding: 0;
+  }
+}
+
+@media only screen and (max-width: 640px) {
+  .edit-profile form {
+    flex-direction: column;
+  }
+
+  main .container .edit-profile .left {
+    margin-left: 1rem;
+  }
+}
+
+@media only screen and (max-width: 992px) {
+  main {
+    padding: 1rem;
+    overflow-x: hidden;
+  }
+
+  main .container {
+    max-width: 100%;
+    flex-direction: column;
+    padding: 5px;
+  }
+}
