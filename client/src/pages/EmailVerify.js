@@ -32,7 +32,7 @@ const EmailVerify = () => {
   const token = queryParameters?.get("token");
 
   useEffect(() => {
-    document.title = `Email Verification | ONetwork Forum`;
+    document.title = `Email Verification | EduX`;
   }, []);
 
   useEffect(() => {

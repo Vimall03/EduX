@@ -26,7 +26,7 @@ const Topic = () => {
 
   useEffect(() => {
     if (topic && Object?.keys(topic)?.length > 0) {
-      document.title = `${topic?.title} | ONetwork Forum`;
+      document.title = `${topic?.title} | EduX`;
     }
   }, [topic]);
 

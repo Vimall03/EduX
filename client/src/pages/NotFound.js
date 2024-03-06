@@ -3,7 +3,7 @@ import Lottie from "lottie-react";
 import Error404 from "../assets/lotties/error-404-not-found.json";
 
 const NotFound = () => {
-  document.title = "Page Not Found | ONetwork Forum";
+  document.title = "Page Not Found | EduX";
   return (
     <Row className="auth-form justify-content-center">
       <div className="bg-wrapper">

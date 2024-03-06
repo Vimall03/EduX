@@ -15,7 +15,7 @@ const NewTopic = () => {
   const { spaces } = useSelector((state) => state.topic);
 
   useEffect(() => {
-    document.title = `Add New Topic | ONetwork Forum`;
+    document.title = `Add New Topic | EduX`;
   }, []);
 
   useEffect(() => {
@@ -25,7 +25,13 @@ const NewTopic = () => {
 
   var options = [
     {
-    value: "value", label: "label"
+    value: "android", label: "android",
+    },
+    {
+    value: "iOS", label: "iOS",
+    },
+    {
+    value: "android", label: "android",
     },
   ];
   // {

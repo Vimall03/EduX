@@ -1,13 +1,15 @@
 import { useState } from "react";
-
 import AuthPage from "./authPage";
 import ChatsPage from "./chatsPage";
+import { Navigate } from "react-router-dom";
 
-function Chat(props) {
+function Chat() {
   const [user, setUser] = useState();
 
   if (!user) {
-    return <AuthPage userData={props.userData} onAuth={(user) => setUser(user)} />;
+    
+    return <AuthPage onAuth={(user) => setUser(user)} />;
+
   } else {
     return <ChatsPage user={user} />;
   }

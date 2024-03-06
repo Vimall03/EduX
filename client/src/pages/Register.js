@@ -1,4 +1,6 @@
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+
+import { UserContext } from "../UserContext";
 import {
   Row,
   Col,
@@ -16,9 +18,9 @@ import { MdAlternateEmail } from "react-icons/md";
 import { SlLock } from "react-icons/sl";
 import { register, resetRegister } from "../redux/slices/authSlice";
 
-const Register = ({ userData, setUserData }) => {
+const Register = () => {
   useEffect(() => {
-    document.title = `Register | ONetwork Forum`;
+    document.title = `Register `;
   }, []);
 
   const [username, setUsername] = useState("");
@@ -33,19 +35,44 @@ const Register = ({ userData, setUserData }) => {
     (state) => state.auth.register
   );
 
+
+
+
+
+  const { userData, setUserData } = useContext(UserContext);
+
+  // Now you can use userData and setUserData here
+  // For example:
+  const handleUpdateUserData = (username, email, password, firstName, lastName) => {
+    setUserData({
+      username: username,
+      email: email,
+      password: password,
+      firstName: firstName,
+      lastName: lastName
+    });
+  };
   const handleSubmit = async (e) => {
+
     e.preventDefault();
 
+    handleUpdateUserData(username, email, password, firstName, lastName)
     if (!username || !email || !password || !firstName || !lastName) return;
+
     try {
-      dispatch(register({ username, email, password, firstName, lastName })); 
-      setUserData({ username: username, email: email, password: password, firstName: firstName, lastName: lastName });
+
+      dispatch(register({ username, email, password, firstName, lastName }));
     } catch (err) {
       console.log(err.message);
     }
   };
 
   useEffect(() => {
+    console.log(userData)
+  }, [userData])
+
+  useEffect(() => {
+
     dispatch(resetRegister());
   }, [dispatch]);
 
@@ -69,7 +96,7 @@ const Register = ({ userData, setUserData }) => {
               {isLoading && <div className="loader"></div>}
               <h3 className="text-center">Register</h3>
               <p className="text-center">
-                Welcome to ONetwork, a platform to connect with the world.
+                Welcome to EduX, a platform to connect with the world.
               </p>
               {message && (
                 <div

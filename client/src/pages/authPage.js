@@ -1,5 +1,7 @@
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../UserContext";
 import axios from "axios";
+
 
 const AuthPage = (props) => {
   const [username, setUsername] = useState();
@@ -8,9 +10,7 @@ const AuthPage = (props) => {
   const [first_name, setFirstName] = useState();
   const [last_name, setLastName] = useState();
 
-  useEffect(() => {
-    console.log("User Data:", props.userData);
-  }, [props.userData]);
+
   
 
   const onLogin = (e) => {
@@ -35,6 +35,18 @@ const AuthPage = (props) => {
       .catch((e) => console.log(JSON.stringify(e.response.data)));
   };
 
+  // const { userData, setUserDataLogin } = useContext(UserContext);
+  // console.log(userData)
+  // // console.log(userDataLogin, "this is login info")
+  // const storedUserData = localStorage.getItem("userDataLogin");
+  // const initialUserData = storedUserData ? JSON.parse(storedUserData) : "defaultValue";
+  // setUserDataLogin(initialUserData);
+  // console.log(initialUserData)
+
+  
+
+
+
   return (
     <div className="login-page">
       <div className="card">
@@ -55,6 +67,9 @@ const AuthPage = (props) => {
           />
           <button type="submit">LOG IN</button>
         </form>
+
+
+
 
         {/* Sign Up Form */}
         <form onSubmit={onSignup}>

@@ -23,7 +23,7 @@ const EditProfile = () => {
 
   useEffect(() => {
     if (username)
-      document.title = `${username} - Edit Profile | ONetwork Forum`;
+      document.title = `${username} - Edit Profile | EduX`;
   }, [username]);
 
   useEffect(() => {

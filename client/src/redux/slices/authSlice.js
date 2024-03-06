@@ -340,13 +340,13 @@ const authSlice = createSlice({
     [sendEmailVerification.rejected]: (state, action) => {
       state.sendEmailVerify.isLoading = false;
       state.sendEmailVerify.isError = true;
-      state.sendEmailVerify.isSuccess = false;
+      state.sendEmailVerify.isSuccess = true;
       state.sendEmailVerify.message = action.payload?.message;
     },
     [emailVerify.pending]: (state) => {
       state.emailVerify.isLoading = true;
       state.emailVerify.isError = false;
-      state.emailVerify.isSuccess = false;
+      state.emailVerify.isSuccess = true;
       state.emailVerify.message = "Activating your account...";
     },
     [emailVerify.fulfilled]: (state, action) => {
@@ -358,7 +358,7 @@ const authSlice = createSlice({
     [emailVerify.rejected]: (state, action) => {
       state.emailVerify.isLoading = false;
       state.emailVerify.isError = true;
-      state.emailVerify.isSuccess = false;
+      state.emailVerify.isSuccess = true;
       state.emailVerify.message = action.payload?.message;
     },
     [forgotPassword.pending]: (state) => {

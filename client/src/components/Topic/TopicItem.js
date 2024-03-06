@@ -77,7 +77,8 @@ const TopicItem = ({ topic }) => {
         <Link to={`/topics/${topic?.TopicID}/${topic?.slug}`}>
           <h4 className="topic-title">{topic?.title}</h4>
         </Link>
-        <p className="topic-summary">{topic?.content}</p>
+        {/* <p className="topic-summary">{(topic?.content).substring(0, 310)+"..."}</p> */}
+        <p className="topic-summary">{(topic?.content.length  > 300) ? (topic?.content).substring(0, 300)+"...": topic?.content }</p>
         <div className="topic-meta d-flex align-items-center">
           <div className="topic-writer d-flex align-items-center">
             <Link

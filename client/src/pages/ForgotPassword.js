@@ -22,7 +22,7 @@ const ForgotPassword = () => {
   );
 
   useEffect(() => {
-    document.title = `Forgot Password | ONetwork Forum`;
+    document.title = `Forgot Password | EduX`;
   }, []);
 
   const handleSubmit = async (e) => {

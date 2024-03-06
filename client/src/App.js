@@ -5,7 +5,8 @@ import {
   Route,
   Navigate,
 } from "react-router-dom";
-import Chat from "./pages/chat/app"
+import Chat from "./pages/Chat"
+
 import Login from "./pages/Login";
 import Register from "./pages/Register";
 import Header from "./components/Header";
@@ -34,8 +35,7 @@ const App = () => {
   let isAuth = localStorage.getItem("isLoggedIn") ? true : false;
   const { isLoggedIn } = useSelector((state) => state.auth);
 
-  const [userData, setUserData] = useState(null);
-
+  
   return useMemo(() => {
     return (
       <Router>
@@ -44,7 +44,7 @@ const App = () => {
           <Route path="*" element={<NotFound />} />
           <Route
             path="/register"
-            element={isAuth ? <Navigate replace to="/" /> : <Register userData={userData} setUserData={setUserData} />}
+            element={isAuth ? <Navigate replace to="/" /> : <Register  />}
           />
           <Route
             path="/login"
@@ -85,7 +85,7 @@ const App = () => {
             {/* self added */}
             <Route
             path="/chat"
-            element={!isAuth ? <Navigate replace to="/login" /> : <Chat userData={userData} />}
+            element={!isAuth ? <Navigate replace to="/login" /> : <Chat  />}
           />
 
           <Route path="*" element={<NotFound />} />

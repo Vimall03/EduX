@@ -14,7 +14,7 @@ const Home = () => {
   const { sortOption, searchQuery } = useSelector((state) => state.topic);
 
   useEffect(() => {
-    document.title = `Home | ONetwork Forum`;
+    document.title = `Home | EduX`;
   }, []);
 
   useEffect(() => {

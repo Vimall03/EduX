@@ -1,4 +1,5 @@
-import { useEffect, useState } from "react";
+import React, { useContext, useEffect, useState } from "react";
+import { UserContext } from "../UserContext";
 import {
   InputGroup,
   Row,
@@ -25,11 +26,26 @@ const Login = () => {
   );
 
   useEffect(() => {
-    document.title = `Login | ONetwork Forum`;
+    document.title = `Login | EduX`;
   }, []);
+
+  const { userDataLogin, setUserDataLogin } = useContext(UserContext);
+
+  // Now you can use userData and setUserData here
+  // For example:
+  const handleUpdateUserData = (email, password) => {
+    if (email && password) {setUserDataLogin({
+      email: email,
+      password: password,
+    });}
+  };
+
+
+
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    handleUpdateUserData(email, password)
     if (!email || !password) return;
     try {
       dispatch(login({ email, password }));
@@ -37,6 +53,9 @@ const Login = () => {
       // console.log(err?.message);
     }
   };
+  useEffect(() => {
+    console.log(userDataLogin)
+  }, [userDataLogin])
 
   useEffect(() => {
     dispatch(resetLogin());
@@ -45,6 +64,7 @@ const Login = () => {
   useEffect(() => {
     if (isLoggedIn) {
       navigate("/");
+      localStorage.setItem("userDataLogin", JSON.stringify(userDataLogin));
     }
   }, [isLoggedIn, navigate]);
 
@@ -62,13 +82,12 @@ const Login = () => {
               {isLoading && <div className="loader"></div>}
               <h3 className="text-center">Login</h3>
               <p className="text-center">
-                Welcome to ONetwork, a platform to connect with the world.
+                Welcome to EduX, a platform to connect with the world.
               </p>
               {message && (
                 <div
-                  className={`message ${isError ? "error" : ""} ${
-                    isSuccess ? "success" : ""
-                  } ${isLoading ? "info" : ""}`}
+                  className={`message ${isError ? "error" : ""} ${isSuccess ? "success" : ""
+                    } ${isLoading ? "info" : ""}`}
                 >
                   {`${message} `}
                   {message?.includes("must activate") && (
